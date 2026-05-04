@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Home</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+
+    <div class="container mt-4">
+
+        <% if (blogs && blogs.length > 0) { %>
+
+            <% blogs.forEach((blog, index) => { %>
+                <div class="card mb-3 p-3">
+                    <h2><%= index + 1 %>. <%= blog.title %></h2>
+                    <h6>Created By: <%= blog.owner %></h6>
+                    <p><%= blog.body %></p>
+                </div>
+            <% }) %>
+
+        <% } else { %>
+            <h3>No blogs available</h3>
+        <% } %>
+
+    </div>
+
+    <%- include('./partials/scripts') %>
+</body>
+</html>
