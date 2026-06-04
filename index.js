@@ -32,7 +32,6 @@ app.get('/', async (req, res) => {
 
         const blogs = await Blog.find({})
         
-        console.log(blogs)
 
         return res.render('home', {  
             user: req.user,
@@ -48,4 +47,4 @@ app.get('/', async (req, res) => {
 app.use('/user', userRoute)
 app.use('/blog', blogRoute)
 
-app.listen(process.env.PORT, () => console.log(`App is listening at port : ${process.env.PORT}`))
+app.listen(process.env.PORT, () => console.log(`App is listening at port localhost:${process.env.PORT}`))
